@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import logging
 
-
 logging.basicConfig(filename="ignore/sample.log", format='%(message)s', level=logging.INFO)
 
 
@@ -58,13 +57,20 @@ def plots(res, inside, outside, num):
     ax.tick_params(axis='both', colors='white', labelsize=15)
     ax.set_aspect(1)
     ax.add_patch(circle)
-    ax.set_title(f'π = {res}   n = {num}', fontsize=20, color='white', pad=40)
+    
+    ax.set_title(f'With n = {num}\nπ = {res}', 
+                fontsize=20, 
+                fontname='Cambria',
+                fontstyle='italic',
+                color='white', 
+                pad=20
+    )
    
     # Dots in the circle 
-    ax.scatter(inside[0], inside[1], c='#ee9b00')
+    ax.scatter(inside[0], inside[1], c='#ee9b00', s=2)
     
     # Dots off the circle 
-    ax.scatter(outside[0], outside[1], c='#7209b7')
+    ax.scatter(outside[0], outside[1], c='#7209b7', s=2)
     
     plt.xlim([-1.0, 1.0])
     plt.ylim([-1.0, 1.0])
@@ -72,4 +78,4 @@ def plots(res, inside, outside, num):
     plt.show()
     
 
-main(1000)
+main(100000)

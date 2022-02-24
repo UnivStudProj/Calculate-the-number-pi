@@ -1,7 +1,11 @@
-# Idea source:
-# https://www.youtube.com/watch?v=pvimAM_SLic
+##################################################
+# Idea source:                                   #
+# https://www.youtube.com/watch?v=pvimAM_SLic    #
+##################################################
 
+from cProfile import label
 import matplotlib.pyplot as plt
+from matplotlib.transforms import Bbox
 import numpy as np
 from PyQt6 import QtCore, QtGui, QtWidgets
 
@@ -60,10 +64,11 @@ def plots(res, inside, outside, num, radius):
     )
    
     # Dots in the circle 
-    ax.scatter(inside[0], inside[1], c='#ee9b00', s=2)
+    ax.scatter(inside[0], inside[1], c='#ee9b00', s=2, label='Inside dots')
     
     # Dots off the circle 
-    ax.scatter(outside[0], outside[1], c='#7209b7', s=2)
+    ax.scatter(outside[0], outside[1], c='#7209b7', s=2, label='Outside dots')
+    ax.legend(loc='center left', bbox_to_anchor=(0.775, 1.080), fontsize='xx-large', frameon=False, markerscale=6.0, labelcolor='white', handletextpad=0.6, handlelength=0.9, handleheight=1.2)
     
     plt.xlim([-radius, radius])
     plt.ylim([-radius, radius])
@@ -78,6 +83,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(388, 519)
+        MainWindow.setWindowIcon(QtGui.QIcon('materials/python.ico'))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("background-color: #343a40;")
         self.centralwidget.setObjectName("centralwidget")

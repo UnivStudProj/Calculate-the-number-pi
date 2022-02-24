@@ -3,16 +3,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-import logging
 
-logging.basicConfig(filename="ignore/sample.log", format='%(message)s', level=logging.INFO)
-
-
-def l(var):
-    logging.info('=' * 50)
-    logging.info(var)
-    logging.info('=' * 50)
-    
 
 def main(n):
     res, dots = calculate_pi(n)
@@ -40,6 +31,7 @@ def calculate_pi(n):
         points_total += 1
     dots_in = np.array([[x_in], [y_in]])
     dots_off = np.array([[x_off], [y_off]])
+    
     return (4 * (points_in / points_total), (dots_in, dots_off))
 
 
@@ -47,7 +39,7 @@ def plots(res, inside, outside, num):
     plt.style.use('grayscale')
     plt.rcParams.update({'font.family': 'Arial'})
     fig, ax = plt.subplots(figsize=(10, 10), dpi=80, facecolor='#161616')
-    circle = plt.Circle((0, 0), 1.0,color='c', fill=False, lw=2)
+    circle = plt.Circle((0, 0), 1.0, color='c', fill=False, lw=2)
     
     ax.set_facecolor('#1F1F1F')
     ax.spines['bottom'].set_color('white')
@@ -58,7 +50,7 @@ def plots(res, inside, outside, num):
     ax.set_aspect(1)
     ax.add_patch(circle)
     
-    ax.set_title(f'With n = {num}\nπ = {res}', 
+    ax.set_title(f'With n = {num}\nπ = {res}',
                 fontsize=20, 
                 fontname='Cambria',
                 fontstyle='italic',
@@ -78,4 +70,5 @@ def plots(res, inside, outside, num):
     plt.show()
     
 
-main(100000)
+if __name__ == '__main__':
+    main(100000)

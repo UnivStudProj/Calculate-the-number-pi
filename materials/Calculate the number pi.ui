@@ -36,46 +36,146 @@
 
 }</string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
+         <layout class="QVBoxLayout" name="verticalLayout_7">
           <item>
-           <widget class="QLabel" name="label">
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>20</pointsize>
-             </font>
+           <widget class="QWidget" name="right_part" native="true">
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
             </property>
-            <property name="styleSheet">
-             <string notr="true">color: #e9ecef;</string>
-            </property>
-            <property name="text">
-             <string>Length</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="labelLengthStart">
+               <property name="font">
+                <font>
+                 <family>Cambria</family>
+                 <pointsize>28</pointsize>
+                 <italic>true</italic>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: #e9ecef;</string>
+               </property>
+               <property name="text">
+                <string>x&lt;sub&gt;start&lt;/sub&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="inputStart">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>350</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Quant Antiqua</family>
+                 <pointsize>16</pointsize>
+                 <italic>true</italic>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: #fca311;
+background-color: #000814;</string>
+               </property>
+               <property name="text">
+                <string>-1.0</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit">
-            <property name="font">
-             <font>
-              <family>Quant Antiqua</family>
-              <pointsize>16</pointsize>
-              <italic>true</italic>
-              <bold>true</bold>
-             </font>
+           <widget class="QWidget" name="left_part" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-            <property name="styleSheet">
-             <string notr="true">color: #fca311;
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QLabel" name="labelLengthEnd">
+               <property name="font">
+                <font>
+                 <family>Cambria</family>
+                 <pointsize>28</pointsize>
+                 <italic>true</italic>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: #e9ecef;</string>
+               </property>
+               <property name="text">
+                <string>x&lt;sub&gt;end&lt;/sub&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="inputEnd">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>350</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Quant Antiqua</family>
+                 <pointsize>16</pointsize>
+                 <italic>true</italic>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: #fca311;
 background-color: #000814;</string>
-            </property>
-            <property name="text">
-             <string>1.0</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
+               </property>
+               <property name="text">
+                <string>1.0</string>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
@@ -109,10 +209,9 @@ background-color: #000814;</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <widget class="QLabel" name="label_2">
+           <widget class="QLabel" name="labelDotsNumber">
             <property name="font">
              <font>
-              <family>Arial</family>
               <pointsize>20</pointsize>
              </font>
             </property>
@@ -128,7 +227,7 @@ background-color: #000814;</string>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_2">
+           <widget class="QLineEdit" name="inputDots">
             <property name="font">
              <font>
               <family>Quant Antiqua</family>
@@ -170,12 +269,20 @@ background-color: #000814;</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #fca311;
-background-color: #000814;
-border: 2px solid #e9ecef;</string>
+          <string notr="true">QPushButton {
+	color: #fca311;
+	background-color: #000814;
+	border: 2px solid #e9ecef;
+}
+QPushButton::Pressed {
+	color: green;
+}</string>
          </property>
          <property name="text">
           <string>Calculate</string>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
          </property>
         </widget>
        </item>

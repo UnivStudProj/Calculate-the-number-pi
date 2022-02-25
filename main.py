@@ -101,6 +101,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(388, 519)
+        MainWindow.setWindowIcon(QtGui.QIcon('materials/python.ico'))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("background-color: #343a40;")
         self.centralwidget.setObjectName("centralwidget")
@@ -264,7 +265,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Calculate the number π"))
         self.labelLengthStart.setText(_translate("MainWindow", "x<sub>start</sub>"))
         self.inputStart.setText(_translate("MainWindow", str(self.xStart)))
         self.labelLengthEnd.setText(_translate("MainWindow", "x<sub>end</sub>"))
